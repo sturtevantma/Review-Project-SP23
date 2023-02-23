@@ -1,5 +1,13 @@
 #include <vector>
-#include <pair>
+#include <iostream>
+#include <string>
+#include <vector>
+
+struct Category {
+    std::string name;
+    float weight;
+    std::vector<std::pair<std::string, float> > grades;
+};
 
 class Course {
     private:
@@ -15,10 +23,4 @@ class Course {
         float search_grade(std::string name);
         std::vector<std::pair<std::string, float> > get_grades(std::string name); // Returns all grades from the category
 
-};
-
-struct Category {
-    std::string name;
-    float weight;
-    std::vector<std::pair<std::string, float> > grades;
 };
