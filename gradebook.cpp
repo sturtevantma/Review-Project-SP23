@@ -196,3 +196,11 @@ float Course::cat_grade(std::string name) {
     total_grade *= (categories[idx].weight/100);
     return total_grade;
 }
+
+std::vector<std::pair<std::string, float>> Course::get_grades(std::string name) {
+    for(Category cat : this->categories) {
+        if(cat.name == name) {
+            return cat.grades;
+        }
+    }
+}
