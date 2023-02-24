@@ -36,7 +36,7 @@ void Course::read_file(std::string fname) {
         // Create Category
         Category cat;
         cat.name = word;
-        this->categories.append(cat);
+        this->categories.push_back(cat);
     }
 
     // For each word in next line assign weight
@@ -73,7 +73,7 @@ float Course::search_grade(std::string name) {
     for (int i = 0; i < categories.size(); i++) {
         for (int j = 0; j < categories[i].grades.size(); j++) {
             //storing the values into check in order to check if name == check.first string
-            std::pair<std::string, int> check = categories[i].grades[j][j];
+            std::pair<std::string, int> check = categories[i].grades[j];
             if (check.first == name) {
                 return check.second;
             }
