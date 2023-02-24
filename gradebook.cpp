@@ -85,4 +85,43 @@ float Course::search_grade(std::string name) {
 
 float Course::current_grade() {
     //
+    float total_grade;
+
+    for (int i = 0; i < categories.size(); i++) {
+        float category_grade = 0;
+        int size =  categories[i].grades.size();
+        for (int j = 0; j < categories[i].grades.size(); j++){
+            std::pair<std::string, float> check = categories[i].grades[j];
+            if (check.second == -1) {
+                size--;
+                continue;
+            }
+            category_grade += check.second;
+        }
+    category_grade /= size;
+    category_grade *= (categories[i].weight/100);
+    total_grade += category_grade;
+    }
+    return total_grade;
+}
+
+float Course::cum_grade() {
+    //
+    float total_grade;
+
+    for (int i = 0; i < categories.size(); i++) {
+        float category_grade = 0;
+        int size =  categories[i].grades.size();
+        for (int j = 0; j < categories[i].grades.size(); j++){
+            std::pair<std::string, float> check = categories[i].grades[j];
+            if (check.second == -1) {
+                continue;
+            }
+            category_grade += check.second;
+        }
+    category_grade /= size;
+    category_grade *= (categories[i].weight/100);
+    total_grade += category_grade;
+    }
+    return total_grade;
 }
