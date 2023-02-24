@@ -7,9 +7,7 @@ vector<pair<string, float> grade
 */
 
 Course::Course() {
-    //No input file given, printout no file and return nothing
-    std::cout << "No input file give.";
-    return;
+
 }
 
 Course::Course(std::string f_name) {
@@ -30,9 +28,9 @@ void Course::read_file(std::string fname) {
     // For each word in line
     std::string line;
     std::getline(file_stream, line);
-    std::stringstream sstream(line);
+    std::stringstream* sstream = new std::stringstream(line);
     std::string word;
-    while(sstream >> word) {
+    while(*sstream >> word) {
         // Create Category
         Category cat;
         cat.name = word;
@@ -41,9 +39,9 @@ void Course::read_file(std::string fname) {
 
     // For each word in next line assign weight
     std::getline(file_stream, line);
-    sstream.str(line);
+    sstream = new std::stringstream(line);
     int n = 0;
-    while(sstream >> word) {
+    while(*sstream >> word) {
         // Assign weight
         this->categories[n].weight = std::stoi(word);
         n++;
@@ -52,7 +50,8 @@ void Course::read_file(std::string fname) {
     // For each remaining line assign grade data
     while( std::getline(file_stream, line) ) {
         n = 0;
-        while(sstream >> word) {
+        sstream = new std::stringstream(line);
+        while(*sstream >> word) {
 
             // Separate name,grade
             int comma = word.find(',');
@@ -65,6 +64,7 @@ void Course::read_file(std::string fname) {
             n++;
         }
     }
+    delete sstream;
 
 }
 

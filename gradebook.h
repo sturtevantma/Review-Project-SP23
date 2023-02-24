@@ -18,7 +18,7 @@ class Course {
 
     public:
         Course();                           // Constructor to create empty gradebook
-        Course(std::string fname);                 // Constructor to load grades from a file
+        Course(std::string fname);          // Constructor to load grades from a file
         float current_grade();              // The users grade excluding incomplete work (represented with a -1 in the file)
         float cum_grade();                  // The users total grae including all ork (incomplete counted as 0)
         void read_file(std::string fname);  // Takes a file name and reads the data, invalid data will throw an exception
