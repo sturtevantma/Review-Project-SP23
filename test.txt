@@ -1,6 +1,6 @@
 Labs Assignments Projects Exams
 20 20 50 10
-l1,100 a1,100 p1,-1 e1, -1
+l1,100 a1,100 p1,-1 e1,-1
 l2,100 a2,-1 p2,-1
 l3,0 a3,-1 
 l4,100 a4,-1 
