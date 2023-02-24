@@ -22,7 +22,7 @@ class Course {
         void read_file(std::string fname);  // Takes a file name and reads the data, invalid data will throw an exception
         void write_file(std::string fname); // Writes gradebook info to a file
         float cat_grade(std::string name);  // Returns the grade of the category
-        float search_grade(std::string name);
+        float search_grade(std::string name);//Find grade by assignment name
         std::vector<std::pair<std::string, float> > get_grades(std::string name); // Returns all grades from the category
 
 };
