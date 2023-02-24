@@ -79,8 +79,8 @@ float Course::search_grade(std::string name) {
             }
         } 
     }
-    // If loop ends without returning print out never found in any category
-    std::cout << name << " not found in any category." << std::endl;
+    // If loop ends without returning return a -1 as it is not found
+    return -1;
 }
 
 float Course::current_grade() {
