@@ -68,6 +68,43 @@ void Course::read_file(std::string fname) {
 
 }
 
+void Course::write_file(std::string fname) {
+    // Sort categories by length
+    std::sort(this->categories.begin(),
+              this->categories.end(),
+              [](Category a, Category b){return a.grades.size() > b.grades.size();}
+    );
+
+    // Create line vec that will store each line to be written to the file
+    std::vector<std::string> line_vec(this->categories[0].grades.size() + 2, "");
+
+    // For each category by length
+    for(Category cat : this->categories) {
+        line_vec[0] += cat.name + " ";
+        line_vec[1] += std::to_string(cat.weight) + " ";
+        // For each pair of data append it to the appropriate line
+        for(int i = 2; i < cat.grades.size()+2; i++) {
+            std::string name = cat.grades[i-2].first;
+            float grade = cat.grades[i-2].second;
+            std::string data_pair = name + "," + std::to_string(grade);
+            line_vec[i] += data_pair + " ";
+        }
+    }
+
+    // Write line_vec to file
+    std::ofstream file_stream;
+    file_stream.open(fname);
+    if(!file_stream.is_open()) {
+        std::cout << "File could not be opened you buffoon" << std::endl;
+        throw;
+    }
+
+    for(std::string s : line_vec) {
+        file_stream << s << '\n';
+    }
+
+}
+
 float Course::search_grade(std::string name) {
     // Loop over our grade vec to search for a match
     for (int i = 0; i < categories.size(); i++) {
