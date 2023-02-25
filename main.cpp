@@ -8,9 +8,15 @@ int main(int argc, char* argv[]) {
 
     Course CSC212(fname);
 
-    std::string ss;
-    while(std::cin >> ss){
-        if()
+    std::string choice;
+    //takes in choice to decide which function to use
+    while(std::cin >> choice){
+        if(choice == "0"){
+            return 0;
+        }
+        else if(choice == "1"){
+
+        }
     }
 
 }
