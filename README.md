@@ -15,8 +15,19 @@ A numerical representation and the letter grade corresponding with it.
 
 Repo Address: https://github.com/sturtevantma/Review-Project-SP23
 
+# Documentation
+
+
+### Category
+Category   
+`Category::name`  
+The name of the category  
+`Category::weight`  
+The category's weight for your course grade 
+`Category::grades`  
+A vector of pairs containing all assignments and the achieved grades  
+
 ### How to Compile
 For the actual percentage representation for each category, the user needs to hard code their grade for each category before compiling.
 When compiling, you need to type `g++ main.cpp gradebook.cpp`
-To execute, type `./a.exe`
-The file name is inputted through CLA
+To execute, type `./a.exe <file name>'
