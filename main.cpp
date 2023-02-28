@@ -57,11 +57,11 @@ int main(int argc, char* argv[]) {
         }
         else if(choice == "4"){
             //returns category totals and course total
-            std::cout << CSC212.cat_grade("Labs");
-            std::cout << CSC212.cat_grade("Assignments");
-            std::cout << CSC212.cat_grade("Projects");
-            std::cout << CSC212.cat_grade("Exams");
-            std::cout << CSC212.current_grade() << "%";
+            std::cout << "Labs grade: " << CSC212.cat_grade("Labs") << "\n";
+            std::cout << "Assignments grade: " <<CSC212.cat_grade("Assignments") << "\n";
+            std::cout << "Projects grade: " <<CSC212.cat_grade("Projects") << "\n";
+            std::cout << "Exams grade: " <<CSC212.cat_grade("Exams") << "\n";
+            std::cout << CSC212.cum_grade();
         }
         else if(choice == "5"){
             //returns only course total
