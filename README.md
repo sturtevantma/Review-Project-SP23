@@ -17,7 +17,6 @@ Repo Address: https://github.com/sturtevantma/Review-Project-SP23
 
 ### How to Compile
 For the actual percentage representation for each category, the user needs to hard code their grade for each category before compiling.
-When compiling, you need to type `g++ main.cpp Course.cpp Task.cpp`
+When compiling, you need to type `g++ main.cpp gradebook.cpp`
 To execute, type `./a.exe`
-There is no additional input needed because the current grade of the student is hard coded.
-The final grade and letter grade equivalent will be provided as output.
+The file name is inputted through CLA
