@@ -18,7 +18,7 @@ Repo Address: https://github.com/sturtevantma/Review-Project-SP23
 # Documentation
 
 ### Category
-Category is a container of grades for the course
+Category is a container of grades for the course  
 `Category::name`  
 The name of the category  
 `Category::weight`  
