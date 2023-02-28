@@ -49,3 +49,8 @@ Returns all grades from the category
 For the actual percentage representation for each category, the user needs to hard code their grade for each category before compiling.
 When compiling, you need to type `g++ main.cpp gradebook.cpp`
 To execute, type `./a.exe <file name>`
+
+# Planning
+[general_planning](./planning/general_planning.pdf)  
+![read_file](./planning/read_file.jpg)  
+![write_file](./planning/write_file.jpg)
