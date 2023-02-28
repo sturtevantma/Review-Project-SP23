@@ -122,7 +122,7 @@ float Course::search_grade(std::string name) {
 
 float Course::current_grade() {
     // Summation of only currently submitted grades
-    float total_grade;
+    float total_grade = 0;
 
     for (int i = 0; i < categories.size(); i++) {
         // Set the category specific grade to 0
@@ -135,6 +135,9 @@ float Course::current_grade() {
             // If a -1 is found then we decrease the size because its not cummulative
             if (check.second == -1) {
                 size--;
+                if (size == 0) {
+                    size = 1;
+                }
                 continue;
             }
             category_grade += check.second;
@@ -182,7 +185,7 @@ float Course::cat_grade(std::string name) {
         }
     }
 
-    float total_grade;
+    float total_grade = 0;
     // Loop over the categories grades and add them to total_grade if it's not a -1
     for (int i = 0; i < categories[idx].grades.size(); i++) {
         std::pair<std::string, float> check = categories[idx].grades[i];
