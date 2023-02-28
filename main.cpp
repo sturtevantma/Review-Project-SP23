@@ -20,7 +20,7 @@ int main(int argc, char* argv[]) {
             std::string assignment;
             std::cout << "Enter an assignment name: ";
             std::cin >> assignment;
-            std::cout << CSC212.search_grade(assignment);
+            std::cout << CSC212.search_grade(assignment) << "%";
         }
         else if(choice == "2"){
             //call for specific category grades and total
@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
             //stores grades in a vector and uses a ranged for loop to print all grades in category
             std::vector<std::pair<std::string, float> > grades = CSC212.get_grades(category);
             for (auto pair : grades) {
-                std::cout << pair.first << ": " << pair.second << std::endl;
+                std::cout << pair.first << ": " << pair.second <<  "%" << std::endl;
             }
             std::cout << CSC212.cat_grade(category);
         }
@@ -39,21 +39,21 @@ int main(int argc, char* argv[]) {
             //store grades in a vector and uses ranged for loops to print all grades in categories
             std::vector<std::pair<std::string, float> > labs = CSC212.get_grades("Labs");
             for (auto pair : labs) {
-                std::cout << pair.first << ": " << pair.second << std::endl;
+                std::cout << pair.first << ": " << pair.second <<  "%" << std::endl;
             }
             std::vector<std::pair<std::string, float> > assignments = CSC212.get_grades("Assignments");
             for (auto pair : assignments) {
-                std::cout << pair.first << ": " << pair.second << std::endl;
+                std::cout << pair.first << ": " << pair.second <<  "%" << std::endl;
             }
             std::vector<std::pair<std::string, float> > projects = CSC212.get_grades("Projects");
             for (auto pair : projects) {
-                std::cout << pair.first << ": " << pair.second << std::endl;
+                std::cout << pair.first << ": " << pair.second <<  "%" << std::endl;
             }
             std::vector<std::pair<std::string, float> > exams = CSC212.get_grades("Exams");
             for (auto pair : exams) {
-                std::cout << pair.first << ": " << pair.second << std::endl;
+                std::cout << pair.first << ": " << pair.second <<  "%" << std::endl;
             }
-            std::cout << CSC212.current_grade();
+            std::cout << CSC212.current_grade() << "%";
         }
         else if(choice == "4"){
             //returns category totals and course total
@@ -61,11 +61,11 @@ int main(int argc, char* argv[]) {
             std::cout << CSC212.cat_grade("Assignments");
             std::cout << CSC212.cat_grade("Projects");
             std::cout << CSC212.cat_grade("Exams");
-            std::cout << CSC212.current_grade();
+            std::cout << CSC212.current_grade() << "%";
         }
         else if(choice == "5"){
             //returns only course total
-            std::cout << CSC212.current_grade();
+            std::cout << CSC212.current_grade() << "%";
         }
         std::cout << "\n\nChoose an Option Below:\n[1]- Get an individual grade\n[2]- Get the category grades and total grade\n[3]- Get all grades and course overall\n[4]- Get category totals and course total\n[5]- Get course total\n[0]- Exit" << std::endl;
     }
