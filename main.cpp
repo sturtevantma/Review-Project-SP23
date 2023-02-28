@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
 
     std::string choice;
     //takes in choice to decide which function to use
-    std::cout << "Choose an Option Below:\n[1]- Get an individual grade\n [2]- Get the category grades and total grade\n[3]- Get all grades and course overall\n[4]- Get category totals and course total\n[5]- Get course total\n[0]- Exit" << std::endl;
+    std::cout << "Choose an Option Below:\n[1]- Get an individual grade\n[2]- Get the category grades and total grade\n[3]- Get all grades and course overall\n[4]- Get category totals and course total\n[5]- Get course total\n[0]- Exit" << std::endl;
     while(std::cin >> choice){
         if(choice == "0"){
             return 0;
@@ -67,6 +67,7 @@ int main(int argc, char* argv[]) {
             //returns only course total
             std::cout << CSC212.current_grade();
         }
+        std::cout << "\n\nChoose an Option Below:\n[1]- Get an individual grade\n[2]- Get the category grades and total grade\n[3]- Get all grades and course overall\n[4]- Get category totals and course total\n[5]- Get course total\n[0]- Exit" << std::endl;
     }
 
 }
